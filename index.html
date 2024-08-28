@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Bachche</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background-image: url('happy.jpg');
+            background-size: contain;
+            background-position: center;
+            color: #fdf9f9;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+        }
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px #000000;
+            color: #ff4f81;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        p {
+            font-size: 1.8em;
+            margin: 0 20px;
+            text-shadow: 2px 2px 4px #000000;
+            line-height: 1.5;
+            color: #ffafcc;
+        }
+        .image-button {
+            margin-top: 50px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            outline: none;
+            text-align: center;
+            color: #ffb3b3;
+            transition: transform 0.2s ease-in-out;
+            
+        }
+        .image-button img {
+            width: 120px;
+            height: auto;
+        }
+        .image-button:hover {
+            transform: scale(1.2);
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px #0e0d0d;
+            color: #ffd6d6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday 🎉, Kudrat</h1>
+    <p>
+       
+        
+         Wishing you a day filled with love, laughter, and all the joy you bring into the lives of those around you. Here's to celebrating you today and every day.</p>
+    <p>May your life be filled with love, joy, and all the happiness you deserve..</p>
+    
+    <button class="image-button" onclick="playAudio()">
+        <p>Open Your Gift</p>
+        <img src="gift.jpg" alt="Heart Image Button">
+    </button>
+    
+    <audio id="birthdayAudio" controls src="happy birthday.mp3"></audio>
+
+    <div class="footer">
+        <p>With all my love</p>
+    </div>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('birthdayAudio');
+            
+            if (audio) {
+                console.log('listen');
+                audio.play().then(() => {
+                    console.log('Playing our special song...');
+                }).catch(error => {
+                    console.error('Error playing audio:', error);
+                    alert('Unable to play audio. Please check your file path or browser settings.');
+                });
+            } else {
+                console.error('Audio element not found.');
+                alert('Audio element not found.');
+            }
+        }
+    </script>
+</body>
+</html>
